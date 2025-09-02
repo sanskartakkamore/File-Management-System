@@ -1,0 +1,429 @@
+.sidebar-drawer {
+  z-index: 1100 !important;
+}
+
+.sidebar-drawer .MuiDrawer-paper {
+  border-right: 1px solid #e0e0e0;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  padding: 16px 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebar-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.sidebar-title {
+  font-weight: 600 !important;
+  color: #1a1a1a;
+  margin: 0 !important;
+  flex: 1;
+}
+
+.sidebar-close-button {
+  color: #666666 !important;
+  padding: 8px !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+  margin-left: 8px;
+  border: 1px solid transparent;
+}
+
+.sidebar-close-button:hover {
+  background-color: rgba(25, 118, 210, 0.08) !important;
+  color: #1976d2 !important;
+  border-color: rgba(25, 118, 210, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(25, 118, 210, 0.2);
+}
+
+.sidebar-close-button:active {
+  transform: scale(0.95);
+  background-color: rgba(25, 118, 210, 0.12) !important;
+}
+
+/* Add a small visual indicator */
+.sidebar-close-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -2px;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 12px;
+  background-color: #1976d2;
+  border-radius: 1px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar-close-button:hover::after {
+  opacity: 0.6;
+}
+
+.folder-stats {
+  display: flex;
+  gap: 16px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-icon {
+  font-size: 16px !important;
+  color: #666666;
+}
+
+.stat-item .MuiTypography-caption {
+  color: #666666;
+  font-weight: 500;
+}
+
+/* New folder stats design */
+.folder-stats-new {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  margin-top: 12px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.stat-card-icon {
+  font-size: 20px !important;
+  color: #495057;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-label {
+  color: #6c757d !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-count {
+  color: #212529 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 24px;
+  background: #dee2e6;
+  border-radius: 0.5px;
+}
+
+.folder-tree-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.folder-tree {
+  padding: 0 !important;
+}
+
+.tree-node {
+  border-bottom: none !important;
+}
+
+.tree-node-button {
+  padding: 6px 12px !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+  position: relative;
+  margin: 2px 8px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.tree-node-button:hover {
+  background-color: rgba(25, 118, 210, 0.06) !important;
+  transform: translateX(2px);
+}
+
+.tree-node-button.selected {
+  background-color: rgba(25, 118, 210, 0.12) !important;
+  border: 1px solid rgba(25, 118, 210, 0.3);
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.15);
+}
+
+.tree-node-button.selected .tree-node-text .MuiTypography-root {
+  color: #1976d2 !important;
+  font-weight: 600 !important;
+}
+
+.tree-node-button.selected .folder-icon {
+  color: #1976d2 !important;
+}
+
+.tree-node-icon {
+  min-width: auto !important;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 8px !important;
+}
+
+.expand-button {
+  padding: 4px !important;
+  margin-left: 8px;
+  color: #666666 !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.expand-button:hover {
+  background: #ffffff !important;
+  color: #1976d2 !important;
+  border-color: rgba(25, 118, 210, 0.3);
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.2);
+  transform: scale(1.15);
+}
+
+.expand-spacer {
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+}
+
+.folder-icon {
+  font-size: 20px !important;
+  color: #495057;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  padding: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.folder-icon.open {
+  color: #1976d2 !important;
+  background: rgba(25, 118, 210, 0.1);
+  border-color: rgba(25, 118, 210, 0.2);
+}
+
+.tree-node-text {
+  margin: 0 !important;
+}
+
+.tree-node-text .MuiTypography-root {
+  font-size: 14px;
+  color: #333333;
+  transition: all 0.2s ease;
+}
+
+/* Visual hierarchy enhancements */
+.tree-node-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: transparent;
+  border-radius: 0 3px 3px 0;
+  transition: all 0.2s ease;
+}
+
+.tree-node-button.selected::before {
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  box-shadow: 0 2px 4px rgba(25, 118, 210, 0.3);
+}
+
+/* Improved folder tree spacing */
+.folder-tree .MuiCollapse-root {
+  margin-left: 12px;
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+.folder-tree .MuiCollapse-root::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 0;
+  bottom: 50%;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(25, 118, 210, 0.2), transparent);
+}
+
+/* File node specific styles */
+.file-node {
+  position: relative;
+}
+
+.file-button {
+  min-height: 36px !important;
+  border-radius: 6px !important;
+  margin: 1px 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.file-button:hover {
+  background-color: rgba(76, 175, 80, 0.06) !important;
+  transform: translateX(2px);
+}
+
+.file-button.selected {
+  background-color: rgba(76, 175, 80, 0.12) !important;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.15);
+}
+
+.file-button.selected .file-text .MuiTypography-root {
+  color: #4caf50 !important;
+  font-weight: 600 !important;
+}
+
+.file-button.selected .file-icon {
+  color: #4caf50 !important;
+  background: rgba(76, 175, 80, 0.1);
+  border-color: rgba(76, 175, 80, 0.2);
+}
+
+.file-icon {
+  font-size: 18px !important;
+  color: #666666;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  padding: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.file-icon.image {
+  color: #ff9800 !important;
+  background: rgba(255, 152, 0, 0.1);
+  border-color: rgba(255, 152, 0, 0.2);
+}
+
+.file-icon.pdf {
+  color: #f44336 !important;
+  background: rgba(244, 67, 54, 0.1);
+  border-color: rgba(244, 67, 54, 0.2);
+}
+
+.file-icon.document {
+  color: #2196f3 !important;
+  background: rgba(33, 150, 243, 0.1);
+  border-color: rgba(33, 150, 243, 0.2);
+}
+
+.file-icon.default {
+  color: #666666;
+  background: rgba(102, 102, 102, 0.1);
+  border-color: rgba(102, 102, 102, 0.2);
+}
+
+.file-text .MuiTypography-root {
+  font-size: 13px !important;
+  color: #555555;
+  font-weight: 400 !important;
+}
+
+/* File node connecting lines */
+.file-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: transparent;
+  border-radius: 0 2px 2px 0;
+  transition: all 0.2s ease;
+}
+
+.file-button.selected::before {
+  background: linear-gradient(135deg, #4caf50, #66bb6a);
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
+}
+
+.loading-container {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Scrollbar Styling */
+.folder-tree-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.folder-tree-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.folder-tree-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.folder-tree-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar-drawer .MuiDrawer-paper {
+    width: 260px !important;
+  }
+
+  .tree-node-button {
+    padding: 6px 12px !important;
+  }
+
+  .sidebar-header {
+    padding: 12px 16px;
+  }
+}

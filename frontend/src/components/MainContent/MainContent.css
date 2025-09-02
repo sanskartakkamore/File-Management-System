@@ -1,0 +1,616 @@
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f2f5;
+  overflow: hidden;
+}
+
+/* Header Styles */
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #fafafa;
+}
+
+.header-title h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.header-actions {
+  display: flex;
+  gap: 16px;
+}
+
+/* Button Styles */
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #1976d2;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1565c0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+}
+
+.btn-secondary {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #e0e0e0;
+}
+
+.btn-secondary:hover {
+  background-color: #eeeeee;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-icon {
+  font-size: 18px;
+}
+
+/* Table Styles */
+.content-table-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none;
+  height: 0; /* This forces flex to calculate proper height */
+  min-height: 0; /* Allows shrinking */
+}
+
+/* Fixed Header */
+.fixed-table-header {
+  background-color: #f0f2f5;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0 16px;
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.header-row {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr 150px 150px 80px;
+  gap: 20px;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.header-cell {
+  font-weight: 600 !important;
+  color: #1a1a1a !important;
+  font-size: 14px !important;
+  padding: 8px 4px !important;
+  text-align: center;
+  background-color: #f0f2f5;
+  white-space: nowrap;
+}
+
+.header-cell.name-header {
+  text-align: left;
+}
+
+.header-cell.date-header {
+  font-size: 14px !important;
+}
+
+/* Scrollable Body */
+.scrollable-table-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px 16px 16px 16px;
+  min-height: 0; /* Allows the flex item to shrink below content size */
+}
+
+.content-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 4px;
+  background-color: transparent;
+}
+
+.name-header {
+  width: 40%;
+}
+
+.description-header {
+  width: 25%;
+}
+
+.date-header {
+  width: 15%;
+}
+
+.actions-header {
+  width: 5%;
+  text-align: center;
+}
+
+/* Table Body */
+.table-body {
+  background-color: transparent;
+}
+
+/* Card Styling Based on Level */
+.content-row {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 8px;
+}
+
+.content-row:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+/* White background for all cards initially and deeper levels */
+.white-card {
+  background-color: #ffffff !important;
+}
+
+/* First level expansion only - Light grayish-blue background */
+.first-level-card {
+  background-color: #f0f4f8 !important;
+}
+
+/* Table Cells */
+.content-row td {
+  padding: 6px 16px;
+  border: none;
+  vertical-align: middle;
+}
+
+.content-row td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.content-row td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Folder Card Content */
+.folder-card-content {
+  width: 100%;
+}
+
+.folder-main-row {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr 150px 150px 80px;
+  gap: 20px;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.expanded-content {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Nested rows alignment - Force same grid structure as parent */
+.expanded-content .content-row {
+  display: block !important;
+  width: 100%;
+  margin: 4px 0;
+}
+
+.expanded-content .content-row td {
+  display: block !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.expanded-content .folder-card-content {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.expanded-content .folder-main-row,
+.expanded-content .file-row-content {
+  display: grid !important;
+  grid-template-columns: 1.8fr 1.2fr 150px 150px 80px !important;
+  gap: 20px !important;
+  align-items: center;
+  padding: 4px 0;
+  margin: 0;
+  width: 100%;
+}
+
+.file-row-content {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr 150px 150px 80px;
+  gap: 20px;
+  align-items: center;
+  padding: 6px 0;
+  margin: 4px 0;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.file-row-content:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.name-cell {
+  padding: 6px !important;
+}
+
+.name-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.item-avatar {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.item-avatar.folder {
+  background-color: transparent;
+}
+
+.item-avatar.file {
+  background-color: transparent;
+}
+
+.description-cell {
+  color: #6c757d;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.date-cell {
+  color: #495057;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.actions-cell {
+  text-align: center;
+  width: 80px;
+}
+
+/* File Type Icons */
+.file-icon {
+  font-size: 18px;
+}
+
+.file-icon.image {
+  color: #4caf50;
+}
+
+.file-icon.pdf {
+  color: #f44336;
+}
+
+.file-icon.document {
+  color: #2196f3;
+}
+
+.file-icon.default {
+  color: #666666;
+}
+
+/* Expand Button */
+.expand-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #6c757d;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.expand-button.hover-only {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.content-row:hover .expand-button.hover-only {
+  opacity: 1;
+  visibility: visible;
+}
+
+.expand-button:hover {
+  background-color: rgba(25, 118, 210, 0.08);
+  color: #1976d2;
+}
+
+/* Item Details */
+.item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.item-name {
+  font-weight: 500;
+  color: #212529;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-description {
+  color: #6c757d;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Action Button */
+.action-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #6c757d;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-button:hover {
+  background-color: rgba(25, 118, 210, 0.08);
+  color: #1976d2;
+}
+
+/* Menu Icons */
+.menu-icon {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Empty State */
+.empty-state-cell {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-state-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Empty folder content styling */
+.empty-folder-content {
+  opacity: 0.6;
+  background-color: #f8f9fa;
+}
+
+.empty-folder-content:hover {
+  background-color: #e9ecef;
+}
+
+.empty-folder-content .item-name {
+  font-size: 12px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Pagination */
+.content-pagination {
+  border-top: 1px solid #e0e0e0;
+  background-color: #fafafa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+/* Expand Spacer */
+.expand-spacer {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* Folder Icons */
+.folder-icon {
+  font-size: 20px;
+  color: #ffd700;
+}
+
+.folder-icon.open {
+  color: #ffb300;
+}
+
+/* Folder Icon with Number Badge */
+.folder-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.folder-icon-base {
+  font-size: 32px;
+  color: #6c757d;
+}
+
+.folder-number-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background-color: #ffc107;
+  color: #000;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: bold;
+  border: 1px solid white;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb-container {
+  padding: 8px 32px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #ffffff;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border: none;
+  background: none;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.breadcrumb-item:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.breadcrumb-item.root {
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.breadcrumb-item.root:hover {
+  background-color: rgba(25, 118, 210, 0.1);
+  color: #1565c0;
+}
+
+.breadcrumb-separator {
+  color: #ccc;
+  font-weight: 300;
+  user-select: none;
+}
+
+.breadcrumb-icon {
+  font-size: 16px;
+}
+
+.current-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+.location-label {
+  font-weight: 500;
+}
+
+.location-path {
+  color: #333;
+  font-weight: 400;
+}
+
+.location-info {
+  color: #666;
+  font-size: 11px;
+  margin-left: 16px;
+}
+
+/* File Icon */
+.file-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #007bff;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,235 @@
+.app-header {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  min-height: 64px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.header-center {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  max-width: 500px;
+  margin: 0 24px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.menu-toggle {
+  margin-right: 16px !important;
+  color: #666666 !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+  position: relative;
+}
+
+.menu-toggle:hover {
+  background-color: rgba(25, 118, 210, 0.08) !important;
+  color: #1976d2 !important;
+  transform: scale(1.05);
+}
+
+.menu-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Add a subtle animation when toggling */
+.menu-toggle.active {
+  background-color: rgba(25, 118, 210, 0.12) !important;
+  color: #1976d2 !important;
+}
+
+.breadcrumb-container {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.breadcrumb {
+  color: #666666 !important;
+}
+
+.breadcrumb-link {
+  display: flex !important;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none !important;
+  color: #666666 !important;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #1a1a1a !important;
+}
+
+.breadcrumb-icon {
+  font-size: 18px !important;
+}
+
+.search-field {
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-field .MuiOutlinedInput-root {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.search-field .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #1976d2;
+}
+
+.search-field
+  .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #1976d2;
+  border-width: 2px;
+}
+
+.search-field .MuiInputAdornment-root {
+  color: #666666;
+}
+
+.filter-button {
+  color: #ffffff !important;
+  background-color: #202a62 !important;
+  border-radius: 12px !important;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.filter-button:hover {
+  background-color: #182050 !important;
+  box-shadow: none !important;
+}
+
+.create-button {
+  background-color: #202a62 !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.create-button:hover {
+  background-color: #182050 !important;
+  box-shadow: none !important;
+}
+
+/* Ensure icon color matches */
+.create-button .MuiSvgIcon-root,
+.filter-button .MuiSvgIcon-root {
+  color: #ffffff !important;
+}
+
+.create-menu,
+.filter-menu {
+  margin-top: 8px;
+}
+
+.create-menu .MuiPaper-root,
+.filter-menu .MuiPaper-root {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid #e0e0e0;
+  min-width: 180px;
+}
+
+.menu-item {
+  padding: 12px 16px !important;
+  gap: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.menu-item:hover {
+  background-color: rgba(25, 118, 210, 0.04) !important;
+}
+
+.menu-icon {
+  color: #666666;
+  font-size: 20px !important;
+}
+
+.menu-item:hover .menu-icon {
+  color: #1976d2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-toolbar {
+    padding: 0 16px;
+  }
+
+  .header-center {
+    max-width: 300px;
+    margin: 0 16px;
+  }
+
+  .breadcrumb-container {
+    max-width: 200px;
+  }
+
+  .breadcrumb-link span {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .search-field {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-center {
+    display: none;
+  }
+
+  .header-right {
+    gap: 8px;
+  }
+
+  .create-button .MuiButton-startIcon {
+    margin: 0;
+  }
+
+  .create-button .MuiButton-startIcon + * {
+    display: none;
+  }
+}
