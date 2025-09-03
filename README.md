@@ -37,7 +37,7 @@ A comprehensive full-stack file management application built with React.js and N
 
 - **React 19** - UI framework
 - **Material-UI (MUI 7)** - Component library and icons
-- **React Context API** - State management
+- **React Redux** - State management
 - **Axios** - HTTP client
 - **React Dropzone** - File upload handling
 - **CSS3** - Custom styling
@@ -65,7 +65,7 @@ Before running this application, make sure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/sanskartakkamore/File-Management-System.git
 cd file-management-app
 ```
 
@@ -77,14 +77,6 @@ cd backend
 
 # Install dependencies
 npm install
-
-# Create environment file (optional)
-touch .env
-
-# Add the following to .env if needed:
-# PORT=5000
-# MONGODB_URI=mongodb://localhost:27017/filemanagement
-# NODE_ENV=development
 ```
 
 ### 3. Frontend Setup
@@ -364,14 +356,6 @@ curl -X POST http://localhost:5000/api/files/upload \
 5. Set up SSL certificates
 6. Configure logging and monitoring
 
-### Docker Deployment (Optional)
-
-```dockerfile
-# Create Dockerfile for backend and frontend
-# Use docker-compose for orchestration
-# Include MongoDB service in docker-compose
-```
-
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -386,7 +370,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Authors
 
-- **Your Name** - _Sanskar Takkamore_ - [YourGitHub](https://github.com/yourusername)
+- **Your Name** - _Sanskar Takkamore_ - https://github.com/sanskartakkamore
 
 ## 🙏 Acknowledgments
 
@@ -394,16 +378,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - React team for the amazing framework
 - MongoDB team for the flexible database
 - Express.js team for the robust web framework
-
----
-
-## 📞 Support
-
-If you encounter any issues or have questions, please:
-
-1. Check the troubleshooting section above
-2. Search existing issues in the repository
-3. Create a new issue with detailed information about the problem
 
 ---
 
