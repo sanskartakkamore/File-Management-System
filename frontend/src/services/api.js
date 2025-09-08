@@ -82,9 +82,15 @@ export const fileAPI = {
 
   // Upload file
   uploadFile: (formData, onUploadProgress) => {
-    return api.post("/files/upload", formData, {
+    const uploadId =
+      formData.get("tempFileId") || `${Date.now()}-${Math.random()}`;
+    const file = formData.get("file");
+    const size = typeof file?.size === "number" ? file.size : undefined;
+    return api.post("/files/upload-stream", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
+        "X-Upload-Id": uploadId,
+        ...(size ? { "X-File-Size": String(size) } : {}),
       },
       onUploadProgress,
     });
@@ -107,7 +113,7 @@ export const fileAPI = {
 
   // Download file
   downloadFile: (id) => {
-    return api.get(`/files/${id}/download`, {
+    return api.get(`/files/${id}/content`, {
       responseType: "blob",
     });
   },
