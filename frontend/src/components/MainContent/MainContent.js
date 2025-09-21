@@ -265,7 +265,10 @@ const TableFileRow = ({ file, level = 0, onFileClick, onMenuAction }) => {
   };
 
   return (
-    <div className={`file-row-content ${getBackgroundClass()}`}>
+    <div
+      className={`file-row-content ${getBackgroundClass()}`}
+      onClick={handleFileClick}
+    >
       <div
         className="name-content"
         style={{ paddingLeft: `${2 + level * 16}px` }}
