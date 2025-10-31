@@ -9,7 +9,10 @@ const File = require("../models/File");
 const Folder = require("../models/Folder");
 
 // Ensure uploads directory exists
-const uploadDir = path.join(__dirname, "../../uploads");
+// Use env override, serverless /tmp on Vercel, or repo uploads folder locally
+const uploadDir =
+  process.env.UPLOAD_DIR ||
+  (process.env.VERCEL ? "/tmp/uploads" : path.join(__dirname, "../../uploads"));
 fs.ensureDirSync(uploadDir);
 
 // Configure multer for file uploads
@@ -814,3 +817,4 @@ router.patch("/:id", async (req, res) => {
 });
 
 module.exports = router;
+
